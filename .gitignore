@@ -3,3 +3,6 @@ dist
 .env
 .env.local
 *.log
+
+# Claude Code
+.claude/settings.local.json
