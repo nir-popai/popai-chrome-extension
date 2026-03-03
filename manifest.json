@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "PopAI Notifications",
+  "description": "Receive PopAI notifications in your browser",
+  "version": "1.0.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwXeaWWBvysJVmDzOw+9kTBPCBgT/GSYIvuRu3q/bqsg5AxJZXEiUU6lNIro1anQMioIwGHH4tGEs7kO+49c1b8WH39p2gEmqfynQRYcimEKcThLQDJJOlG4jTgBjtZT+PyQ7f+qjjNZ0q5KBGHtldyzxd8j3zVupitOcEBOkelsI4nf61BboARXdsym2QdAyMPMszBgBmkz5D8gvUgGOhnI9+zoces0+8oWkotOWkPzw+8qE4e/0/6b6OWxmEFBVy5ahYX79eQLJRN7zosleesc54yhxvbVhJDagDfle4m3Ydi+UABex5xYzB4tz3pBkx1L2Z7Z3Me0wvAvmmbEJRQIDAQAB",
+  "permissions": ["notifications", "storage"],
+  "host_permissions": [
+    "https://cognito-idp.us-east-2.amazonaws.com/*",
+    "https://*.appsync-api.us-east-2.amazonaws.com/*",
+    "https://*.googleapis.com/*",
+    "https://*.firebaseio.com/*",
+    "https://firebaseinstallations.googleapis.com/*",
+    "https://fcmregistrations.googleapis.com/*"
+  ],
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
